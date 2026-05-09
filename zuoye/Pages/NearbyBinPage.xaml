@@ -37,7 +37,7 @@
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <!-- 蓝色返回按钮 -->
+        
         <Button Text="返回首页" 
                 Clicked="OnGoBackClicked"
                 BackgroundColor="#4285F4"

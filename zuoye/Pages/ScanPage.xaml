@@ -4,29 +4,60 @@
              x:Class="zuoye.ScanPage"
              Title="扫码查分类">
 
-	<VerticalStackLayout Padding="30" Spacing="30">
+	<VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Start">
 
-		<Label Text="扫描物品条码/二维码"
-               FontSize="24"
+		
+		<Label Text="扫码查询垃圾分类"
+               FontSize="26"
                FontAttributes="Bold"
                HorizontalOptions="Center"/>
 
-		<BoxView BackgroundColor="#111111"
-                 WidthRequest="240"
-                 HeightRequest="240"
-                 HorizontalOptions="Center"/>
-		<Label Text="【相机预览区】" HorizontalOptions="Center"/>
+		
+		<Frame BorderColor="#333333"
+               BackgroundColor="#F8F8F8"
+               WidthRequest="260"
+               HeightRequest="260"
+               CornerRadius="12"
+               HorizontalOptions="Center">
+			<VerticalStackLayout VerticalOptions="Center">
+				<Label Text="【相机预览区域】"
+                       FontSize="16"
+                       TextColor="#666666"
+                       HorizontalOptions="Center"/>
+				<Label Text="将条码置于框内扫描"
+                       FontSize="12"
+                       TextColor="#999999"
+                       HorizontalOptions="Center"
+                       Margin="0,6"/>
+			</VerticalStackLayout>
+		</Frame>
 
-		<Button Text="点击扫描"
-                FontSize="18"
-                BackgroundColor="#E74C3C"
+		
+		<Button Text="开始扫描"
+                BackgroundColor="#007AFF"
                 TextColor="White"
-                HeightRequest="70"/>
+                FontSize="18"
+                HeightRequest="65"
+                CornerRadius="14"/>
 
-		<Label Text="识别结果：塑料瓶 → 可回收垃圾"
-               FontSize="18"
-               TextColor="#2ECC71"
-               HorizontalOptions="Center"/>
+		
+		<Frame BackgroundColor="#E8F5E8"
+               CornerRadius="10"
+               Padding="16"
+               Margin="0,10">
+			<Label Text="识别结果：塑料瓶 → 可回收垃圾"
+                   FontSize="18"
+                   TextColor="#2D8B2D"/>
+		</Frame>
+
+		
+		<Button Text="返回首页"
+                BackgroundColor="#EEEEEE"
+                TextColor="#333333"
+                FontSize="16"
+                HeightRequest="55"
+                CornerRadius="12"
+                Clicked="GoBackToHome"/>
 
 	</VerticalStackLayout>
 </ContentPage>
