@@ -9,19 +9,19 @@
 
 			<Label Text="垃圾分类指南" FontSize="24" FontAttributes="Bold"/>
 
-			<Border BackgroundColor="#3498DB" Padding="18" StrokeShape="RoundRectangle 8">
+			<Border BackgroundColor="#D4A373" Padding="18" StrokeShape="RoundRectangle 8">
 				<Label Text="可回收垃圾：塑料、玻璃、纸张、金属" TextColor="White" FontSize="17"/>
 			</Border>
 
-			<Border BackgroundColor="#E67E22" Padding="18" StrokeShape="RoundRectangle 8">
+			<Border BackgroundColor="#E9C46A" Padding="18" StrokeShape="RoundRectangle 8">
 				<Label Text="湿垃圾：剩菜、果皮、绿植" TextColor="White" FontSize="17"/>
 			</Border>
 
-			<Border BackgroundColor="#616A6B" Padding="18" StrokeShape="RoundRectangle 8">
+			<Border BackgroundColor="#F4A261" Padding="18" StrokeShape="RoundRectangle 8">
 				<Label Text="干垃圾：污染纸张、一次性餐具" TextColor="White" FontSize="17"/>
 			</Border>
 
-			<Border BackgroundColor="#E74C3C" Padding="18" StrokeShape="RoundRectangle 8">
+			<Border BackgroundColor="#E76F51" Padding="18" StrokeShape="RoundRectangle 8">
 				<Label Text="有害垃圾：电池、药品、化妆品" TextColor="White" FontSize="17"/>
 			</Border>
 

@@ -1,9 +1,20 @@
-﻿namespace zuoye;
+﻿using Microsoft.Maui.Controls;
+using zuoye;
 
-public partial class NearbyBinPage : ContentPage
+namespace zuoye
 {
-    public NearbyBinPage()
+    public partial class NearbyBinPage : ContentPage
     {
-        InitializeComponent();
+        public NearbyBinPage()
+        {
+            InitializeComponent();
+        }
+
+        // 返回首页
+
+        private async void OnGoBackClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
     }
 }
