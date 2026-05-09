@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zuoye.NearbyBinPage"
+             Title="附近垃圾桶">
+
+    <VerticalStackLayout Padding="25" Spacing="20">
+
+        <Label Text="附近垃圾桶/回收点"
+               FontSize="24"
+               FontAttributes="Bold"/>
+
+        <BoxView BackgroundColor="#EEEEEE"
+                 HeightRequest="220"/>
+        <Label Text="【地图预览区域】" HorizontalOptions="Center"/>
+
+        <Label Text="GPS 位置：西安科技大学高新学院"
+               FontSize="17"/>
+
+        <CollectionView HeightRequest="220">
+            <CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>1号垃圾桶（可回收）- 100米</x:String>
+                    <x:String>2号垃圾桶（有害垃圾）- 150米</x:String>
+                    <x:String>3号垃圾回收点 - 300米</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" FontSize="17" Margin="0,8"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,24 +1,26 @@
-﻿namespace zuoye
+﻿using zuoye;
+
+namespace zuoye;
+
+public partial class MainPage : ContentPage
 {
-    public partial class MainPage : ContentPage
+    public MainPage()
     {
-        int count = 0;
+        InitializeComponent();
+    }
 
-        public MainPage()
-        {
-            InitializeComponent();
-        }
+    private async void GoToNearbyBinPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new NearbyBinPage());
+    }
 
-        private void OnCounterClicked(object? sender, EventArgs e)
-        {
-            count++;
+    private async void GoToScanPage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ScanPage());
+    }
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
-        }
+    private async void GoToGuidePage(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new GuidePage());
     }
 }

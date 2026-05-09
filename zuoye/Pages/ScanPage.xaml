@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zuoye.ScanPage"
+             Title="扫码查分类">
+
+	<VerticalStackLayout Padding="30" Spacing="30">
+
+		<Label Text="扫描物品条码/二维码"
+               FontSize="24"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+		<BoxView BackgroundColor="#111111"
+                 WidthRequest="240"
+                 HeightRequest="240"
+                 HorizontalOptions="Center"/>
+		<Label Text="【相机预览区】" HorizontalOptions="Center"/>
+
+		<Button Text="点击扫描"
+                FontSize="18"
+                BackgroundColor="#E74C3C"
+                TextColor="White"
+                HeightRequest="70"/>
+
+		<Label Text="识别结果：塑料瓶 → 可回收垃圾"
+               FontSize="18"
+               TextColor="#2ECC71"
+               HorizontalOptions="Center"/>
+
+	</VerticalStackLayout>
+</ContentPage>
