@@ -1,9 +1,19 @@
-﻿namespace zuoye;
+﻿using Microsoft.Maui.Controls;
 
-public partial class GuidePage : ContentPage
+namespace zuoye
 {
-    public GuidePage()
+    public partial class GuidePage : ContentPage
     {
-        InitializeComponent();
+        public GuidePage()
+        {
+            InitializeComponent();
+        }
+
+
+        private async void GoBackHome(object sender, EventArgs e)
+        {
+
+            await Navigation.PopToRootAsync();
+        }
     }
 }

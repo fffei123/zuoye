@@ -4,25 +4,22 @@
              x:Class="zuoye.MainPage"
              BackgroundColor="Transparent">
 
-    <!-- 用Grid叠加背景图和内容，实现半透明效果 -->
+    
     <Grid>
-        <!-- 半透明背景图，Opacity控制透明度，0.3左右最自然 -->
+       
         <Image Source="background.png"
                Aspect="AspectFill"
                Opacity="0.3"/>
 
-        <!-- 主内容区 -->
         <VerticalStackLayout Padding="25" Spacing="25" VerticalOptions="Center">
 
-            <!-- 标题 -->
-            <Label Text="垃圾分类指引"
+            <Label Text="Waste Sorting Guide"
                    FontSize="30"
                    FontAttributes="Bold"
                    HorizontalOptions="Center"
                    TextColor="White"/>
 
-            <!-- 第一个按钮：浅棕色椭圆 -->
-            <Button Text="查找附近垃圾桶"
+            <Button Text="Find Nearby Bins"
                     FontSize="18"
                     BackgroundColor="#DCC8A8"
                     TextColor="White"
@@ -30,8 +27,7 @@
                     CornerRadius="38"
                     Clicked="GoToNearbyBinPage"/>
 
-            <!-- 第二个按钮：薄荷绿椭圆 -->
-            <Button Text="扫码查询垃圾分类"
+            <Button Text="Scan  Sort Waste"
                     FontSize="18"
                     BackgroundColor="#96C3A7"
                     TextColor="White"
@@ -39,8 +35,7 @@
                     CornerRadius="38"
                     Clicked="GoToScanPage"/>
 
-            <!-- 第三个按钮：淡紫色椭圆 -->
-            <Button Text="垃圾分类指南"
+            <Button Text="Sorting Rules"
                     FontSize="18"
                     BackgroundColor="#B794C0"
                     TextColor="White"
@@ -48,8 +43,7 @@
                     CornerRadius="38"
                     Clicked="GoToGuidePage"/>
 
-            <!-- GPS状态文字 -->
-            <Label Text="GPS 状态：已就绪"
+            <Label Text="GPS Status: Ready"
                    FontSize="16"
                    HorizontalOptions="Center"
                    TextColor="White"

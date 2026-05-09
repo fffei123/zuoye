@@ -2,17 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.ScanPage"
-             Title="扫码查分类">
+             Title="Scan Sort Waste">
 
 	<VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Start">
 
-		
-		<Label Text="扫码查询垃圾分类"
+		<Label Text="Scan Waste for Sorting"
                FontSize="26"
                FontAttributes="Bold"
                HorizontalOptions="Center"/>
 
-		
 		<Frame BorderColor="#333333"
                BackgroundColor="#F8F8F8"
                WidthRequest="260"
@@ -20,11 +18,11 @@
                CornerRadius="12"
                HorizontalOptions="Center">
 			<VerticalStackLayout VerticalOptions="Center">
-				<Label Text="【相机预览区域】"
+				<Label Text="Camera Preview Area"
                        FontSize="16"
                        TextColor="#666666"
                        HorizontalOptions="Center"/>
-				<Label Text="将条码置于框内扫描"
+				<Label Text="Place barcode inside the box"
                        FontSize="12"
                        TextColor="#999999"
                        HorizontalOptions="Center"
@@ -32,26 +30,23 @@
 			</VerticalStackLayout>
 		</Frame>
 
-		
-		<Button Text="开始扫描"
+		<Button Text="Start Scan"
                 BackgroundColor="#007AFF"
                 TextColor="White"
                 FontSize="18"
                 HeightRequest="65"
                 CornerRadius="14"/>
 
-		
 		<Frame BackgroundColor="#E8F5E8"
                CornerRadius="10"
                Padding="16"
                Margin="0,10">
-			<Label Text="识别结果：塑料瓶 → 可回收垃圾"
+			<Label Text="Result: Plastic Bottle → Recyclable"
                    FontSize="18"
                    TextColor="#2D8B2D"/>
 		</Frame>
 
-		
-		<Button Text="返回首页"
+		<Button Text="Back to Home"
                 BackgroundColor="#EEEEEE"
                 TextColor="#333333"
                 FontSize="16"

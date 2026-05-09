@@ -2,48 +2,77 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.NearbyBinPage"
-             Title="附近垃圾桶">
+             Title="Nearby Bin Locations">
 
-    <VerticalStackLayout Padding="25" Spacing="20" BackgroundColor="#E8E8E8">
+    <Grid>
+        <Image Source="background.png"
+               Aspect="AspectFill"
+               Opacity="0.18"/>
 
-        <Label Text="附近垃圾桶/回收点"
-               FontSize="24"
-               FontAttributes="Bold"
-               TextColor="Black"/>
-        
+        <VerticalStackLayout Padding="30" Spacing="20" BackgroundColor="Transparent">
 
-        <Frame BackgroundColor="#FFFFFF" HeightRequest="220" CornerRadius="10">
-            <Label Text="【地图预览区域】" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
-        </Frame>
+            <Label Text="Nearby Rubbish Bins"
+                   FontSize="26"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
 
-        <Label Text="GPS 位置：西安科技大学高新学院"
-               FontSize="17"
-               TextColor="Black"/>
+            <Frame BackgroundColor="#FFFFFF" 
+                   HeightRequest="240" 
+                   CornerRadius="14"
+                   BorderColor="#DDDDDD">
+                <VerticalStackLayout VerticalOptions="Center">
+                    <Label Text="Map Preview Area" 
+                           FontSize="16" 
+                           TextColor="#666666"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </Frame>
 
-        <CollectionView HeightRequest="220">
-            <CollectionView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>1号垃圾桶（可回收）- 100米</x:String>
-                    <x:String>2号垃圾桶（有害垃圾）- 150米</x:String>
-                    <x:String>3号垃圾回收点 - 300米</x:String>
-                </x:Array>
-            </CollectionView.ItemsSource>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Frame BackgroundColor="#FFFFFF" CornerRadius="8" Margin="0,10" Padding="10">
-                        <Label Text="{Binding}" FontSize="17" TextColor="Black"/>
-                    </Frame>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+            <Frame BackgroundColor="#E3F2FD" 
+                   Padding="16" 
+                   CornerRadius="10">
+                <Label Text="Current GPS Location: Xi'an University"
+                       FontSize="17"
+                       TextColor="#1976D2"/>
+            </Frame>
 
-        
-        <Button Text="返回首页" 
-                Clicked="OnGoBackClicked"
-                BackgroundColor="#4285F4"
-                TextColor="White"
-                CornerRadius="10"
-                HeightRequest="50"/>
+            <Label Text="Bin List"
+                   FontSize="18"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
 
-    </VerticalStackLayout>
+            <CollectionView HeightRequest="240">
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>♻️ Recyclable Bin - 100m</x:String>
+                        <x:String>☠️ Hazardous Bin - 150m</x:String>
+                        <x:String>🗑️ General Waste Bin - 300m</x:String>
+                    </x:Array>
+                </CollectionView.ItemsSource>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BackgroundColor="#FFFFFF" 
+                               CornerRadius="10" 
+                               Margin="0,6" 
+                               Padding="14">
+                            <Label Text="{Binding}" 
+                                   FontSize="16" 
+                                   TextColor="Black"/>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Button Text="Back to Home"
+                    BackgroundColor="#6200EE"
+                    TextColor="White"
+                    FontSize="16"
+                    HeightRequest="55"
+                    CornerRadius="12"
+                    Clicked="GoBackHome"/>
+
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>

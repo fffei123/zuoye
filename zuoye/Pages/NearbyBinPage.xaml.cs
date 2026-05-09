@@ -1,5 +1,4 @@
 ﻿using Microsoft.Maui.Controls;
-using zuoye;
 
 namespace zuoye
 {
@@ -10,11 +9,9 @@ namespace zuoye
             InitializeComponent();
         }
 
-        
-
-        private async void OnGoBackClicked(object sender, EventArgs e)
+        private async void GoBackHome(object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
     }
 }

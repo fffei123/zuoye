@@ -2,29 +2,44 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.GuidePage"
-             Title="分类指南">
+             Title="Waste Sorting Guide">
 
-	<ScrollView Padding="25">
-		<VerticalStackLayout Spacing="18">
+	<Grid>
+		<Image Source="background.png" Aspect="AspectFill" Opacity="0.18"/>
 
-			<Label Text="垃圾分类指南" FontSize="24" FontAttributes="Bold"/>
+		<ScrollView Padding="30" BackgroundColor="Transparent">
+			<VerticalStackLayout Spacing="20">
 
-			<Border BackgroundColor="#D4A373" Padding="18" StrokeShape="RoundRectangle 8">
-				<Label Text="可回收垃圾：塑料、玻璃、纸张、金属" TextColor="White" FontSize="17"/>
-			</Border>
+				<Label Text="Waste Sorting Guide"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
 
-			<Border BackgroundColor="#E9C46A" Padding="18" StrokeShape="RoundRectangle 8">
-				<Label Text="湿垃圾：剩菜、果皮、绿植" TextColor="White" FontSize="17"/>
-			</Border>
+				<Frame BackgroundColor="#D4A373" CornerRadius="14" Padding="18">
+					<Label Text="Recyclable: Plastic, Glass, Paper, Metal" TextColor="White" FontSize="17"/>
+				</Frame>
 
-			<Border BackgroundColor="#F4A261" Padding="18" StrokeShape="RoundRectangle 8">
-				<Label Text="干垃圾：污染纸张、一次性餐具" TextColor="White" FontSize="17"/>
-			</Border>
+				<Frame BackgroundColor="#E9C46A" CornerRadius="14" Padding="18">
+					<Label Text="Wet Waste: Leftovers, Fruit Peels, Plants" TextColor="White" FontSize="17"/>
+				</Frame>
 
-			<Border BackgroundColor="#E76F51" Padding="18" StrokeShape="RoundRectangle 8">
-				<Label Text="有害垃圾：电池、药品、化妆品" TextColor="White" FontSize="17"/>
-			</Border>
+				<Frame BackgroundColor="#F4A261" CornerRadius="14" Padding="18">
+					<Label Text="Dry Waste: Contaminated Paper, Disposable Cutlery" TextColor="White" FontSize="17"/>
+				</Frame>
 
-		</VerticalStackLayout>
-	</ScrollView>
+				<Frame BackgroundColor="#E76F51" CornerRadius="14" Padding="18">
+					<Label Text="Hazardous: Batteries, Drugs, Cosmetics" TextColor="White" FontSize="17"/>
+				</Frame>
+
+				<Button Text="Back to Home"
+                        BackgroundColor="#6200EE"
+                        TextColor="White"
+                        FontSize="16"
+                        HeightRequest="55"
+                        CornerRadius="12"
+                        Clicked="GoBackHome"/>
+
+			</VerticalStackLayout>
+		</ScrollView>
+	</Grid>
 </ContentPage>
