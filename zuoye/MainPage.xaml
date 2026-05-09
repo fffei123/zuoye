@@ -2,45 +2,60 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.MainPage"
-             Title="垃圾分类指引">
-    <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#1ABC9C" Offset="0"/>
-            <GradientStop Color="#16A085" Offset="1"/>
-        </LinearGradientBrush>
-    </ContentPage.Background>
-    <VerticalStackLayout Padding="25" Spacing="25">
+             BackgroundColor="Transparent">
 
-        <Label Text="垃圾分类指引"
-               FontSize="30"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
+    <!-- 用Grid叠加背景图和内容，实现半透明效果 -->
+    <Grid>
+        <!-- 半透明背景图，Opacity控制透明度，0.3左右最自然 -->
+        <Image Source="background.png"
+               Aspect="AspectFill"
+               Opacity="0.3"/>
 
-        <Button Text="查找附近垃圾桶"
-                FontSize="18"
-                BackgroundColor="#2ECC71"
-                TextColor="White"
-                HeightRequest="75"
-                Clicked="GoToNearbyBinPage"/>
+        <!-- 主内容区 -->
+        <VerticalStackLayout Padding="25" Spacing="25" VerticalOptions="Center">
 
-        <Button Text="扫码查询垃圾分类"
-                FontSize="18"
-                BackgroundColor="#3498DB"
-                TextColor="White"
-                HeightRequest="75"
-                Clicked="GoToScanPage"/>
+            <!-- 标题 -->
+            <Label Text="垃圾分类指引"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="White"/>
 
-        <Button Text="垃圾分类指南"
-                FontSize="18"
-                BackgroundColor="#9B59B6"
-                TextColor="White"
-                HeightRequest="75"
-                Clicked="GoToGuidePage"/>
+            <!-- 第一个按钮：浅棕色椭圆 -->
+            <Button Text="查找附近垃圾桶"
+                    FontSize="18"
+                    BackgroundColor="#DCC8A8"
+                    TextColor="White"
+                    HeightRequest="75"
+                    CornerRadius="38"
+                    Clicked="GoToNearbyBinPage"/>
 
-        <Label Text="GPS 状态：已就绪"
-               FontSize="16"
-               HorizontalOptions="Center"
-               Margin="0,20"/>
+            <!-- 第二个按钮：薄荷绿椭圆 -->
+            <Button Text="扫码查询垃圾分类"
+                    FontSize="18"
+                    BackgroundColor="#96C3A7"
+                    TextColor="White"
+                    HeightRequest="75"
+                    CornerRadius="38"
+                    Clicked="GoToScanPage"/>
 
-    </VerticalStackLayout>
+            <!-- 第三个按钮：淡紫色椭圆 -->
+            <Button Text="垃圾分类指南"
+                    FontSize="18"
+                    BackgroundColor="#B794C0"
+                    TextColor="White"
+                    HeightRequest="75"
+                    CornerRadius="38"
+                    Clicked="GoToGuidePage"/>
+
+            <!-- GPS状态文字 -->
+            <Label Text="GPS 状态：已就绪"
+                   FontSize="16"
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   Margin="0,20"/>
+
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>
