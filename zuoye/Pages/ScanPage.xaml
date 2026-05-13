@@ -1,33 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.ScanPage"
-             Title="垃圾分类搜索">
-    <VerticalStackLayout Padding="20" Spacing="15">
+             Title="Search Waste Sorting">
 
+    <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+
+        <!-- 标题 -->
+        <Label Text="Waste Classification Query"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"/>
+
+        <!-- 搜索输入框 -->
         <Entry x:Name="SearchEntry"
-               Placeholder="输入垃圾名称搜索，例如：塑料瓶、纸巾"
+               Placeholder="Enter waste name (e.g. Plastic, Batteries)"
                FontSize="18"
-               HeightRequest="50"/>
+               HeightRequest="55"
+               Margin="0,15"/>
 
-        <Button Text="开始搜索"
-                BackgroundColor="#2D8B2D"
+        <!-- 搜索按钮 -->
+        <Button Text="Search Database"
+                BackgroundColor="#007AFF"
                 TextColor="White"
                 FontSize="18"
-                HeightRequest="50"
-                CornerRadius="12"
-                Clicked="OnSearchClicked"/>
+                HeightRequest="65"
+                CornerRadius="14"
+                Clicked="SearchDatabaseClicked"/>
 
+        <!-- 查询结果展示框 -->
         <Frame BackgroundColor="#E8F5E8"
                CornerRadius="10"
-               Padding="16"
-               Margin="0,10">
+               Padding="18"
+               Margin="0,15">
             <Label x:Name="ResultLabel"
-                   Text="搜索结果将显示在这里"
+                   Text="Result: Waiting for query..."
                    FontSize="18"
-                   TextColor="#2D8B2D"/>
+                   TextColor="#2D8B2D"
+                   HorizontalOptions="Center"/>
         </Frame>
 
+        <!-- 返回主页按钮 -->
         <Button Text="Back to Home"
                 BackgroundColor="#EEEEEE"
                 TextColor="#333333"

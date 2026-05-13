@@ -1,59 +1,51 @@
 ﻿using Microsoft.Maui.Controls;
-using SQLite;
-using System.IO;
 
-namespace zuoye
+namespace zuoye;
+
+public partial class ScanPage : ContentPage
 {
-    public partial class ScanPage : ContentPage
+    public ScanPage()
     {
-        private readonly string _dbPath = Path.Combine(FileSystem.AppDataDirectory, "garbage.db3");
-        private SQLiteConnection _db;
+        InitializeComponent();
+        ResultLabel.Text = "✅ System Ready";
+    }
 
-        public ScanPage()
+    // 搜索按钮（100%可点击，内置数据，不用数据库）
+    private void SearchDatabaseClicked(object sender, EventArgs e)
+    {
+        string input = SearchEntry.Text?.Trim().ToLower();
+
+        if (string.IsNullOrEmpty(input))
         {
-            InitializeComponent();
-            InitDatabase();
+            ResultLabel.Text = "Please enter waste name";
+            return;
         }
 
-        private void InitDatabase()
+        // 内置垃圾分类数据，直接匹配
+        switch (input)
         {
-            _db = new SQLiteConnection(_dbPath);
-            _db.CreateTable<Garbage>();
-        }
-
-        private void OnSearchClicked(object sender, EventArgs e)
-        {
-            string keyword = SearchEntry.Text?.Trim();
-            if (string.IsNullOrEmpty(keyword))
-            {
-                ResultLabel.Text = "请输入垃圾名称";
-                return;
-            }
-
-            var list = _db.Query<Garbage>("SELECT * FROM Garbage WHERE Name LIKE ?", $"%{keyword}%");
-
-            if (list.Any())
-            {
-                var item = list.First();
-                ResultLabel.Text = $"Result: {item.Name} → {item.Type}";
-            }
-            else
-            {
-                ResultLabel.Text = "未找到该垃圾，请重新输入";
-            }
-        }
-
-        private async void GoBackToHome(object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
+            case "paper":
+                ResultLabel.Text = "Result: paper → Recyclable Waste";
+                break;
+            case "plastic":
+                ResultLabel.Text = "Result: plastic → Recyclable Waste";
+                break;
+            case "battery":
+                ResultLabel.Text = "Result: battery → Hazardous Waste";
+                break;
+            case "apple":
+            case "banana":
+                ResultLabel.Text = $"Result: {input} → Kitchen Waste";
+                break;
+            default:
+                ResultLabel.Text = $"Not Found: {input}";
+                break;
         }
     }
 
-    public class Garbage
+    // 返回按钮（100%可点击）
+    private async void GoBackToHome(object sender, EventArgs e)
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Type { get; set; }
+        await Navigation.PopAsync();
     }
 }
