@@ -2,52 +2,65 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.ScanPage"
-             Title="Search Waste Sorting">
+             Title="Waste Sorting"
+             BackgroundColor="#FFF9F0">
 
-    <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="22" VerticalOptions="Start" Margin="0,20,0,0">
 
-        <!-- 标题 -->
-        <Label Text="Waste Classification Query"
-               FontSize="26"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
-
-        <!-- 搜索输入框 -->
-        <Entry x:Name="SearchEntry"
-               Placeholder="Enter waste name (e.g. Plastic, Batteries)"
-               FontSize="18"
-               HeightRequest="55"
-               Margin="0,15"/>
-
-        <!-- 搜索按钮 -->
-        <Button Text="Search Database"
-                BackgroundColor="#007AFF"
-                TextColor="White"
-                FontSize="18"
-                HeightRequest="65"
-                CornerRadius="14"
-                Clicked="SearchDatabaseClicked"/>
-
-        <!-- 查询结果展示框 -->
-        <Frame BackgroundColor="#E8F5E8"
-               CornerRadius="10"
-               Padding="18"
-               Margin="0,15">
-            <Label x:Name="ResultLabel"
-                   Text="Result: Waiting for query..."
-                   FontSize="18"
-                   TextColor="#2D8B2D"
+            <Label Text="Waste Classification"
+                   FontSize="32"
+                   FontAttributes="Bold"
+                   TextColor="Black"
                    HorizontalOptions="Center"/>
-        </Frame>
 
-        <!-- 返回主页按钮 -->
-        <Button Text="Back to Home"
-                BackgroundColor="#EEEEEE"
-                TextColor="#333333"
-                FontSize="16"
-                HeightRequest="55"
-                CornerRadius="12"
-                Clicked="GoBackToHome"/>
+            <Label Text="Find out how to sort waste correctly"
+                   FontSize="16"
+                   TextColor="#B89B7C"
+                   HorizontalOptions="Center"/>
 
-    </VerticalStackLayout>
+            <VerticalStackLayout BackgroundColor="#FFFDF7"
+                                Padding="20"
+                                Spacing="18">
+
+                <Entry x:Name="SearchEntry"
+                       Placeholder="e.g. Paper, Battery, Apple, Plastic"
+                       FontSize="18"
+                       HeightRequest="58"
+                       BackgroundColor="#F6EAD9"
+                       TextColor="Black"/>
+
+                <Button Text="Search Now"
+                        BackgroundColor="#8C6A4B"
+                        TextColor="White"
+                        FontSize="19"
+                        HeightRequest="66"
+                        Clicked="SearchDatabaseClicked"/>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout BackgroundColor="#FFF4E6"
+                                Padding="25"
+                                Spacing="8">
+
+                <Label Text="Classification Result"
+                       FontSize="17"
+                       TextColor="#B47E54"/>
+
+                <Label x:Name="ResultLabel"
+                       Text="Waiting for query..."
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="#956A46"/>
+            </VerticalStackLayout>
+
+            <Button Text="← Back to Home"
+                    BackgroundColor="Transparent"
+                    TextColor="#8C6A4B"
+                    FontSize="17"
+                    HeightRequest="50"
+                    Margin="0,20,0,0"
+                    Clicked="GoBackToHome"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
