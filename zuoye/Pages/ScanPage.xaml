@@ -1,52 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="zuoye.ScanPage"
-             Title="Scan Sort Waste">
+             Title="垃圾分类搜索">
+    <VerticalStackLayout Padding="20" Spacing="15">
 
-	<VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Start">
+        <Entry x:Name="SearchEntry"
+               Placeholder="输入垃圾名称搜索，例如：塑料瓶、纸巾"
+               FontSize="18"
+               HeightRequest="50"/>
 
-		<Label Text="Scan Waste for Sorting"
-               FontSize="26"
-               FontAttributes="Bold"
-               HorizontalOptions="Center"/>
-
-		<Frame BorderColor="#333333"
-               BackgroundColor="#F8F8F8"
-               WidthRequest="260"
-               HeightRequest="260"
-               CornerRadius="12"
-               HorizontalOptions="Center">
-			<VerticalStackLayout VerticalOptions="Center">
-				<Label Text="Camera Preview Area"
-                       FontSize="16"
-                       TextColor="#666666"
-                       HorizontalOptions="Center"/>
-				<Label Text="Place barcode inside the box"
-                       FontSize="12"
-                       TextColor="#999999"
-                       HorizontalOptions="Center"
-                       Margin="0,6"/>
-			</VerticalStackLayout>
-		</Frame>
-
-		<Button Text="Start Scan"
-                BackgroundColor="#007AFF"
+        <Button Text="开始搜索"
+                BackgroundColor="#2D8B2D"
                 TextColor="White"
                 FontSize="18"
-                HeightRequest="65"
-                CornerRadius="14"/>
+                HeightRequest="50"
+                CornerRadius="12"
+                Clicked="OnSearchClicked"/>
 
-		<Frame BackgroundColor="#E8F5E8"
+        <Frame BackgroundColor="#E8F5E8"
                CornerRadius="10"
                Padding="16"
                Margin="0,10">
-			<Label Text="Result: Plastic Bottle → Recyclable"
+            <Label x:Name="ResultLabel"
+                   Text="搜索结果将显示在这里"
                    FontSize="18"
                    TextColor="#2D8B2D"/>
-		</Frame>
+        </Frame>
 
-		<Button Text="Back to Home"
+        <Button Text="Back to Home"
                 BackgroundColor="#EEEEEE"
                 TextColor="#333333"
                 FontSize="16"
@@ -54,5 +36,5 @@
                 CornerRadius="12"
                 Clicked="GoBackToHome"/>
 
-	</VerticalStackLayout>
+    </VerticalStackLayout>
 </ContentPage>
