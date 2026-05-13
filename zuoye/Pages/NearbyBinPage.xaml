@@ -31,7 +31,9 @@
             <Frame BackgroundColor="#E3F2FD" 
                    Padding="16" 
                    CornerRadius="10">
-                <Label Text="Current GPS Location: Xi'an University"
+                <!-- 这里名字固定 lblGPS，后台才能识别 -->
+                <Label x:Name="lblGPS"
+                       Text="Getting location..."
                        FontSize="17"
                        TextColor="#1976D2"/>
             </Frame>
@@ -41,15 +43,8 @@
                    FontAttributes="Bold"
                    TextColor="Black"/>
 
-            <CollectionView HeightRequest="240">
-                <CollectionView.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>♻️ Recyclable Bin - 100m</x:String>
-                        <x:String>☠️ Hazardous Bin - 150m</x:String>
-                        <x:String>🗑️ General Waste Bin - 300m</x:String>
-                    </x:Array>
-                </CollectionView.ItemsSource>
-
+            <CollectionView HeightRequest="240"
+                            ItemsSource="{Binding BinList}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Frame BackgroundColor="#FFFFFF" 
@@ -74,5 +69,4 @@
 
         </VerticalStackLayout>
     </Grid>
-
 </ContentPage>
