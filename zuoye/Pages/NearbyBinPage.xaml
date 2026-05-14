@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Microsoft.Maui.Controls.Maps;assembly=Microsoft.Maui.Controls.Maps"
              x:Class="zuoye.NearbyBinPage"
              Title="Nearby Bin Locations">
 
@@ -16,22 +17,18 @@
                    FontAttributes="Bold"
                    TextColor="Black"/>
 
-            <Frame BackgroundColor="#FFFFFF" 
-                   HeightRequest="240" 
-                   CornerRadius="14"
-                   BorderColor="#DDDDDD">
-                <VerticalStackLayout VerticalOptions="Center">
-                    <Label Text="Map Preview Area" 
-                           FontSize="16" 
-                           TextColor="#666666"
-                           HorizontalOptions="Center"/>
-                </VerticalStackLayout>
+            <!-- 用Frame包裹，圆角加在Frame上，Map不能直接加圆角 -->
+            <Frame CornerRadius="14" Padding="0" BorderColor="Transparent" HeightRequest="240">
+                <maps:Map x:Name="BinMap"
+                          HeightRequest="240"
+                          MapType="Street"
+                          IsShowingUser="True"/>
             </Frame>
 
             <Frame BackgroundColor="#E3F2FD" 
                    Padding="16" 
                    CornerRadius="10">
-                <!-- 这里名字固定 lblGPS，后台才能识别 -->
+
                 <Label x:Name="lblGPS"
                        Text="Getting location..."
                        FontSize="17"

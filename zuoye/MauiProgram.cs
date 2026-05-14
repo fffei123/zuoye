@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Maui.LifecycleEvents;
 
 namespace zuoye
 {
@@ -9,16 +9,7 @@ namespace zuoye
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .ConfigureFonts(fonts =>
-                {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                });
-
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
-
+                .UseMauiMaps(); // 只需要这1句开启地图，删掉重复的
             return builder.Build();
         }
     }

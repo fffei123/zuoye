@@ -14,6 +14,7 @@
                        FontSize="26"
                        FontAttributes="Bold"
                        TextColor="Black"/>
+                
 
 				<Frame BackgroundColor="#D4A373" CornerRadius="14" Padding="18">
 					<Label Text="Recyclable: Plastic, Glass, Paper, Metal" TextColor="White" FontSize="17"/>
