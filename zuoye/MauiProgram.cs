@@ -8,8 +8,7 @@ namespace zuoye
         {
             var builder = MauiApp.CreateBuilder();
             builder
-                .UseMauiApp<App>()
-                .UseMauiMaps(); // 只需要这1句开启地图，删掉重复的
+                .UseMauiApp<App>(); 
             return builder.Build();
         }
     }
